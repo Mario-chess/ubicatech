@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link href="{{STATIC_URL}}css/estilos.css" rel="stylesheet" />
+    <link href="{{STATIC_URL}}css/forma.css" rel="stylesheet" />
+    <script src="{{STATIC_URL}}js/jquery.min.js"></script>
+    <script src="{{STATIC_URL}}js/codiguito.js"></script>
+    <!-- Permite manejar imagenes responsive de fondo-->
+    <script type="text/javascript"src="{{STATIC_URL}}js/jquery.vegas.min.js"></script>
+    <meta charset="utf-8" />
+    <title>Login Empresario</title>
+  </head>
+
+  <body class="fondo"> <!--el fondo sera blanco-->
+  <center>
+  <img src="{{STATIC_URL}}images/titulos/ubicatech.png" class="titulo">
+  <br><br>
+
+  <div id='contenedor'>
+    <form id='formulario' form action='.' method='post'>
+      {% csrf_token %}
+      <table>
+        {% for campo in formulario %}
+        <tr>
+          <td><p class="label">{{campo.label_tag}}</p></td>
+          <td><p class="campo">{{campo}}</p></td>
+        </tr>
+        {% endfor %}
+      </table>
+      <br><br>
+      <a href="#" onclick="document.forms['formulario'].submit(); return false;">
+        <img src="{{STATIC_URL}}images/botones/entrar_azul.png" class="botones">
+      </a>
+    </form>      
+  </div>
+
+  </center>
+</body>
+</html>

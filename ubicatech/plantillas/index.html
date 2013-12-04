@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <link href="{{STATIC_URL}}css/estilos.css" rel="stylesheet" />
+    <link href="{{STATIC_URL}}css/forma.css" rel="stylesheet" />
+    <meta charset="utf-8" />
+    <title>Inicio</title>
+  </head>
+
+  <body><!--el fondo sera azul-->
+
+  <header>
+    <nav>      
+      <ul>
+        <li><a href="">&nbsp;</a></li>
+        <li><a href="">Inicio</a></li>
+        <li><a href="">Servicios</a></li>
+        <li><a href="">Ofertas</a></li>
+        <li><a href="">Contacto</a></li>
+        <li><a href="">&nbsp;</a></li>
+        <li class='activate'>
+          <a href="{% url 'empresario.views.crear_empresario' %}">
+            <img src="{{STATIC_URL}}images/botones/registro.png" class="bot_index">
+          </a>
+        </li>
+        <li class='activate'>
+          <a href="{% url 'empresario.views.ingresar' %}">
+            <img src="{{STATIC_URL}}images/botones/entrar.png" class="bot_index">
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <div id='contenedor_blanco'>
+    <center>
+      <img src="{{STATIC_URL}}images/titulo.png">
+      <br><br>
+      <a href="{% url 'empresario.views.crear_empresario' %}">
+        <img src="{{STATIC_URL}}images/botones/es_gratis.png" class="bot_index">
+      </a>
+      </center>
+    </div>
+  <center>
+  <img src="{{STATIC_URL}}images/segundo.png">   <!--este es la segunda imagen y esta transparente-->
+  </center>
+</body>
+</html>

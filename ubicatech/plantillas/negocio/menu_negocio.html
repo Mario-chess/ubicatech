@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <link href="{{STATIC_URL}}css/estilos.css" rel="stylesheet" />   
+    <link href="{{STATIC_URL}}css/forma.css" rel="stylesheet" />   
+
+    <meta charset="utf-8" />
+    <title>Seleccionar Negocio</title>
+</head>
+
+<body class="fondo1"> <!--el fondo sera blanco-->
+ 
+  <table class="cien">
+    <tr>
+      <td>
+        <img src="{{MEDIA_URL}}{{datos.imagen}}" style="margin-left:20%;" width="70" height="70" align="center" >
+        <h3 class="texto" style="text-align:left;">{{datos.username}}</h3>
+      </td>
+
+      <td>
+        <img src="{{STATIC_URL}}images/titulos/seleccionar_sucursal.png" width="427" height="100" style="margin-left:35%;">
+      </td>
+      <td>
+        <a href="{% url 'empresario.views.principal' %}">
+          <img src="{{STATIC_URL}}images/botones/home.png">
+        </a>        
+        <a href="">
+          <img src="{{STATIC_URL}}images/botones/help.png">
+        </a>
+        <a href="{% url 'empresario.views.cerrar' %}">
+          <img src="{{STATIC_URL}}images/botones/close.png">
+        </a>
+      </td> <!--imagenes de los iconitos-->
+    </tr>
+  </table> 
+
+
+  <br><br>
+  
+
+  <center>
+     <table class="setenta" border="0">
+       <tr>
+       {% for dato in negocio %}
+       
+        <td>
+          <a href="/configurar_negocio/{{ dato.id }}">
+            <img src='{{MEDIA_URL}}{{dato.imagen}}' class="menus" style="width: 400px; height: 400px; margin-left:20%;">
+          </a>
+          <br>
+          <p class="texto">{{ dato.nombre }}</p>
+        </td> 
+       {% empty %}
+       <p>No hay negociosregistrados</p>
+       {% endfor %}      
+	</tr>
+    </table>
+      
+</center>
+
+</body>
+</html>
